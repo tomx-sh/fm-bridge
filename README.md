@@ -101,3 +101,8 @@ The live tests skip when the model is unavailable.
 | `src/fm_bridge/messages.py` | OpenAI messages to turns, fingerprints and transcript entries |
 | `src/fm_bridge/schema.py` | JSON Schema to generation schemas, and arguments back |
 | `scripts/build-sdk.sh` | Builds the SDK wheel without Xcode |
+
+## License
+
+[MIT](LICENSE). Apple's Foundation Models SDK, which `build-sdk.sh` downloads and builds, is
+licensed separately under Apache-2.0.

@@ -3,6 +3,8 @@ name = "fm-bridge"
 version = "0.1.0"
 description = "OpenAI-compatible server for Apple's on-device Foundation Model, with native tool calling"
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [
     { name = "Thomas", email = "33961528+tomx-sh@users.noreply.github.com" }
 ]
