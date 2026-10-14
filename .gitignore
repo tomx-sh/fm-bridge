@@ -1,0 +1,16 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# SDK wheel built by scripts/build-sdk.sh
+vendor/
+
+# Pins the locally built SDK wheel, whose hash differs on every build
+uv.lock

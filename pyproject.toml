@@ -1,0 +1,35 @@
+[project]
+name = "fm-bridge"
+version = "0.1.0"
+description = "OpenAI-compatible server for Apple's on-device Foundation Model, with native tool calling"
+readme = "README.md"
+authors = [
+    { name = "Thomas", email = "33961528+tomx-sh@users.noreply.github.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "aiohttp>=3.12",
+    "apple-fm-sdk==0.2.1",
+]
+
+[project.scripts]
+fm-bridge = "fm_bridge.__main__:main"
+
+[tool.uv.sources]
+# Built locally by scripts/build-sdk.sh (PyPI's source package needs a full Xcode to build).
+apple-fm-sdk = { path = "vendor/apple_fm_sdk-0.2.1-py3-none-any.whl" }
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4",
+    "pytest-asyncio>=1.2",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+markers = ["live: needs the on-device model (skipped when it is unavailable)"]
