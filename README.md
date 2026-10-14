@@ -38,6 +38,19 @@ fm-bridge [--host 127.0.0.1] [--port 1977] [--tool-timeout 600] [--idle-ttl 1800
 
 `FM_BRIDGE_HOST` and `FM_BRIDGE_PORT` set the defaults for `--host` and `--port`.
 
+To have `fm-bridge` on your `PATH`, run `uv tool install --editable .`. Being editable, it
+follows changes to the checkout.
+
+## Use with pi
+
+[pi-fm-bridge](https://github.com/tomx-sh/pi-fm-bridge) adds the model to
+[pi](https://pi.dev) as `apple-fm/system`, and starts and stops the bridge for you:
+
+```bash
+uv tool install --editable .
+pi install git:github.com/tomx-sh/pi-fm-bridge
+```
+
 ## How tool calls work
 
 The framework wants to run tools itself; OpenAI clients want to run them. The bridge connects
